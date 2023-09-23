@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0">
+    <title>Create a New Pen</title>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <!-- Favicon -->
+    <link  rel="icon" type="image/png" href="https://harshilchovatiya.github.io/images/android-chrome-192x192.png" >
+</head>
+
+<body>
+    <section id="header">
+        <div class="left">
+            <img src="https://harshilchovatiya.github.io/images/android-chrome-192x192.png" alt="Harshil">
+        </div>
+        <div class="center">
+            <div class="name">
+                <h4 class="title">Harshil Chovatiya </h4>
+                <p>Flutter Developer</p>
+            </div>
+        </div>
+        <div class="right">
+            <ul>
+                <li>
+                    <a href="https://www.instagram.com/harshilchovatiyaa"><i class="fab fa-instagram"></i></a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/harshilbmk"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li>
+                    <a href="https://github.com/harshilchovatiya"><i class="fab fa-github"></i></a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/harshilbmk"><i class="fab fa-linkedin-in"></i></a>
+                </li>
+            </ul>
+        </div>
+
+
+    </section>
+    <section id="main-section">
+        <div class="input-section">
+            <div class="html-field">
+                <h3><i class="fab  fa-html5"></i> HTML</h3>
+                <textarea id="html-input" onkeyup="run()"></textarea>
+            </div>
+            <div class="css-field">
+                <h3><i class="fab fa-css3-alt"></i> CSS</h3>
+                <textarea id="css-input" onkeyup="run()"></textarea>
+            </div>
+            <div class="js-field">
+                <h3><i class="fab fa-js"></i> JS</h3>
+                <textarea id="js-input" onkeyup="run()"></textarea>
+            </div>
+        </div>
+        <div class="output-section">
+            <div class="output-field">
+                <iframe id="output"></iframe>
+            </div>
+        </div>
+    </section>
+    <section id="footer">
+        <div class="copyright">
+            <p>Copyright ©️ HARSHIL CHOVATIYA. Made with <i class="fab fa-heart"></i> by <a
+                    href="https://www.linkedin.com/in/harshilbmk" target="_blank">HARSHIL CHOVATIYA</a></p>
+        </div>
+    </section>
+</body>
+
+<script>
+    function run() {
+        let htmlcode = document.getElementById("html-input").value;
+        let csscode = document.getElementById("css-input").value;
+        let jscode = document.getElementById("js-input").value;
+        let output = document.getElementById("output");
+
+        output.contentDocument.body.innerHTML = htmlcode + "<style>" + csscode + "</style>";
+        output.contentWindow.eval(jscode);
+    }
+</script>
+
+
+
+</html>
